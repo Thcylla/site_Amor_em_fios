@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento</title>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    #checkout-btn {
+      background-color: #6a3f87;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Finalizar Pagamento</h1>
+  <p>Você será redirecionado para o Mercado Pago para completar o pagamento.</p>
+  <button id="checkout-btn">Pagar com Mercado Pago</button>
+
+  <script>
+    document.getElementById("checkout-btn").addEventListener("click", async () => {
+      const carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
+
+      if (carrinho.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+      }
+
+      // Cria itens para a API (exemplo fictício para front-end)
+      const preference = {
+        items: carrinho.map(item => ({
+          title: item.nome,
+          quantity: 1,
+          currency_id: "BRL",
+          unit_price: item.preco
+        }))
+      };
+
+      // Envia para backend fictício
+      const response = await fetch("https://seu-servidor.com/criar-preferencia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(preference)
+      });
+
+      const data = await response.json();
+      if (data.init_point) {
+        window.location.href = data.init_point; // Redireciona para o link de pagamento
+      } else {
+        alert("Erro ao iniciar pagamento.");
+      }
+    });
+  </script>
+</body>
+</html>
+
+git remote set-url origin  https://github.com/Thcylla/site-amor-em-fios.git
+

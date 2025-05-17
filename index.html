@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amor em Fios _ por Célia Sá</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>
+      Amor em Fios <span>_ por Célia Sá</span>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="abrir-carrinho"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Bem-vindo à Amor em Fios!</h2>
+    <p>Produtos feitos com carinho para você.</p>
+    <button onclick="scrollToProdutos()">Ver Produtos</button>
+  </section>
+
+  <section class="produtos" id="produtos">
+    <h3>Nossos Produtos</h3>
+    <div class="grid-produtos">
+      <div class="produto">
+        <img src="https://i.imgur.com/0rVehvk.jpg" alt="Linhaça 100g" />
+        <h4>Linhaça 100g</h4>
+        <p>R$ 6,50</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+      <div class="produto">
+        <img src="https://i.imgur.com/N0Fy8YN.jpg" alt="Linhaça 500g" />
+        <h4>Linhaça 500g</h4>
+        <p>R$ 28,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </div> git add README.md 
+      <div class="produto">
+        <img src="https://i.imgur.com/UMq9zBW.jpg" alt="Linhaça 1kg" />
+        <h4>Linhaça 1kg</h4>
+        <p>R$ 52,00</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <h3>Sobre a Amor em Fios</h3>
+    <p>
+      Produtos naturais e selecionados para cuidar da sua saúde e bem-estar.
+      Feito com amor e dedicação pela Célia Sá.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Amor em Fios _ por Célia Sá - Todos os direitos reservados</p>
+  </footer>
+
+<!-- Carrinho -->
+<div id="carrinho-modal" class="carrinho">
+  <h3>Seu Carrinho</h3>
+  <ul id="lista-carrinho"></ul>
+  <p id="total-carrinho">Total: R$ 0,00</p>
+  <button id="finalizar-compra" disabled>Finalizar Compra</button>
+  <button id="fechar-carrinho">Fechar</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
